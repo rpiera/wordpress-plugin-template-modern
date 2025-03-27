@@ -89,3 +89,23 @@ tests/
 This template was modernized by [Your Name] based on a traditional OOP plugin structure.
 
 Use it as your solid foundation for professional WordPress plugin development!
+
+---
+
+## 🐳 Run WordPress with Docker (for development)
+
+This template supports running WordPress in Docker with your plugin mounted automatically.
+
+### Steps
+
+1. Make sure you have Docker installed.
+2. Run the setup script:
+
+```bash
+chmod +x setup-docker.sh
+./setup-docker.sh
+```
+
+- WordPress runs at: http://localhost:8000
+- phpMyAdmin: http://localhost:8080
+- Your plugin is mounted in `/wp-content/plugins/wordpress-plugin-template-modern/`

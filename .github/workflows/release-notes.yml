@@ -1,0 +1,29 @@
+name: Generate Release Notes
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  generate-notes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Extract version tag
+        id: get_tag
+        run: echo "RELEASE_TAG=${GITHUB_REF##*/}" >> $GITHUB_ENV
+
+      - name: Generate release notes from CHANGELOG.md
+        run: |
+          VERSION="${{ env.RELEASE_TAG }}"
+          awk "/## \[${VERSION//./\.}\]/,/^## \[/" CHANGELOG.md | sed '$d' > body.md
+
+      - name: Update GitHub release
+        uses: softprops/action-gh-release@v1
+        with:
+          body_path: body.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

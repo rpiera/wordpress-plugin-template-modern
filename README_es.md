@@ -89,3 +89,23 @@ tests/
 Este template ha sido modernizado por [Tu Nombre] a partir de una base OOP tradicional.
 
 ¡Personalízalo y úsalo como punto de partida para tus plugins profesionales!
+
+---
+
+## 🐳 Ejecutar WordPress con Docker (modo desarrollo)
+
+Esta plantilla soporta ejecutar WordPress en Docker con tu plugin montado automáticamente.
+
+### Pasos
+
+1. Asegúrate de tener Docker instalado.
+2. Ejecuta el script:
+
+```bash
+chmod +x setup-docker.sh
+./setup-docker.sh
+```
+
+- WordPress disponible en: http://localhost:8000
+- phpMyAdmin: http://localhost:8080
+- Tu plugin está montado en `/wp-content/plugins/wordpress-plugin-template-modern/`
