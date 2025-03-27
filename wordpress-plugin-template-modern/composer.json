@@ -1,0 +1,13 @@
+{
+  "name": "wptm/plugin-template",
+  "description": "Modern WordPress plugin template",
+  "type": "wordpress-plugin",
+  "autoload": {
+    "psr-4": {
+      "WPTM\\": "includes/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.0"
+  }
+}
